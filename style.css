@@ -1,162 +1,208 @@
 /* style.css */
 /* style.css */
 
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #1d2d5d;
-  color: #ffffff;
-}
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5em 3em;
-  background-color: transparent;
-}
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #1d2d5d;
+      color: #ffffff;
+    }
 
-.logo {
-  font-size: 1.4em;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 1.5em;
+      flex-wrap: wrap;
+      background-color: transparent;
+    }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2em;
-}
+    .logo {
+      font-size: 1.4em;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
-.nav-links a {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5em;
+      padding: 0;
+      margin: 0;
+    }
 
-.nav-links a:hover {
-  color: #ffdd57;
-}
+    .nav-links a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
 
-.hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4em 6em;
-  height: 85vh;
-  box-sizing: border-box;
-}
+    .nav-links a:hover {
+      color: #ffdd57;
+    }
 
-.hero-text {
-  flex: 1;
-}
+    /* Hero Section */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4em 6em;
+      box-sizing: border-box;
+      height: auto;
+      flex-wrap: wrap;
+    }
 
-.hero-text h1 {
-  font-size: 3.5em;
-  line-height: 1.2;
-  margin: 0.2em 0;
-  font-weight: bold;
-}
-.hero-text .subtext {
-  font-size: 1.1em;
-  max-width: 500px;
-  line-height: 1.6;
-  margin-top: 1em;
-  color: #dddddd;
+    .hero-text {
+      flex: 1;
+      text-align: center;
+    }
 
-}
+    .hero-text h2 {
+      font-size: 1em;
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
 
-.hero-text h2 {
-  font-size: 1em;
-  opacity: 0.7;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
+    .hero-text h1 {
+      font-size: 3em;
+      font-weight: bold;
+      margin: 0.3em 0;
+    }
 
-.btn {
-  display: inline-block;
-  margin-top: 1em;
-  padding: 12px 24px;
-  background-color: #ffffff;
-  color: #1d2d5d;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-}
+    .hero-text .subtext {
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #dddddd;
+      margin-top: 1em;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-.btn:hover {
-  background-color: #ffdd57;
-  color: #000;
-  cursor: pointer;
-}
+    .btn {
+      display: inline-block;
+      margin-top: 2em;
+      padding: 12px 24px;
+      background-color: #ffffff;
+      color: #1d2d5d;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
 
-.hero-image img {
-  max-width: 450px;
-  height: auto;
-  border-radius: 10px;
-}
+    .btn:hover {
+      background-color: #ffdd57;
+      color: #000;
+      cursor: pointer;
+    }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    .hero-image {
+      margin-top: 2em;
+      text-align: center;
+      width: 100%;
+    }
 
-.hero-text h2,
-.hero-text h1,
-.hero-text .subtext,
-.hero-text .btn {
-  animation: fadeInUp 1s ease forwards;
-  opacity: 0;
-}
+    .hero-image img {
+      max-width: 300px;
+      height: auto;
+    }
 
-.hero-text h2 { animation-delay: 0.2s; }
-.hero-text h1 { animation-delay: 0.4s; }
-.hero-text .subtext { animation-delay: 0.6s; }
-.hero-text .btn { animation-delay: 0.8s; }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        padding: 2em 1em;
+        text-align: center;
+      }
 
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 1em 2em;
-  }
+      .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin-top: 1em;
+        gap: 1em;
+      }
 
-  .nav-links {
-    flex-direction: column;
-    gap: 1em;
-    margin-top: 1em;
-  }
+      .hero-text h1 {
+        font-size: 2.2em;
+      }
 
-  .hero {
-    flex-direction: column;
-    padding: 2em;
-    text-align: center;
-    height: auto;
-  }
+      .hero-image img {
+        max-width: 80%;
+      }
+    }
 
-  .hero-text h1 {
-    font-size: 2em;
-  }
+    @media (max-width: 480px) {
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+      }
 
-  .hero-text h2 {
-    font-size: 0.9em;
-  }
+      .nav-links {
+        flex-direction: column;
+        gap: 0.5em;
+      }
+    }
 
-  .hero-image img {
-    max-width: 100%;
-    margin-top: 2em;
-  }
+    /* Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-  .btn {
-    padding: 10px 20px;
-    font-size: 1em;
-  }
-}
+    .hero-text h2,
+    .hero-text h1,
+    .hero-text .subtext,
+    .hero-text .btn {
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+    }
+
+    .hero-text h2 { animation-delay: 0.2s; }
+    .hero-text h1 { animation-delay: 0.4s; }
+    .hero-text .subtext { animation-delay: 0.6s; }
+    .hero-text .btn { animation-delay: 0.8s; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">HOME</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Guide</a></li>
+      <li><a href="#">Planning</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Extracurriculars Guide</h2>
+      <h1>Welcome</h1>
+      <p class="subtext">
+        This website is here to help students find, plan, and succeed in extracurricular activities
+        that support their goals and passions.
+      </p>
+      <a href="#" class="btn">Get Started</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://cdn-icons-png.flaticon.com/512/3198/3198610.png" alt="Activities graphic">
+    </div>
+  </section>
+
+</body>
+</html>
+
