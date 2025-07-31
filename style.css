@@ -124,7 +124,7 @@ body {
     padding: 10px 20px;
     font-size: 1em;
   }
-}
+
 @media (max-width: 980px) {
   .navbar {
     flex-direction: column;
