@@ -154,7 +154,7 @@ body {
   }
 
   .hero-image img {
-    max-width: 100%;
+    max-width: auto;
     margin-top: 2em;
   }
 
