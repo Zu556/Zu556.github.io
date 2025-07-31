@@ -58,6 +58,15 @@ body {
   margin: 0.2em 0;
   font-weight: bold;
 }
+.hero-text .subtext {
+  font-size: 1.1em;
+  max-width: 500px;
+  line-height: 1.6;
+  margin-top: 1em;
+  color: #dddddd;
+}
+
+}
 
 .hero-text h2 {
   font-size: 1em;
