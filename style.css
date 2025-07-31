@@ -136,7 +136,7 @@ body {
   }
 
   .hero {
-    flex-direction: row;
+    flex-direction: column;
     padding: 2em;
     text-align: center;
     height: auto;
