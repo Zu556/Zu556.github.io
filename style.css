@@ -121,3 +121,42 @@ body {
 .hero-text h1 { animation-delay: 0.4s; }
 .hero-text .subtext { animation-delay: 0.6s; }
 .hero-text .btn { animation-delay: 0.8s; }
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em 2em;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1em;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 2em;
+    text-align: center;
+    height: auto;
+  }
+
+  .hero-text h1 {
+    font-size: 2em;
+  }
+
+  .hero-text h2 {
+    font-size: 0.9em;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+    margin-top: 2em;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+}
