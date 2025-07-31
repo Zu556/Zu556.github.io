@@ -130,13 +130,13 @@ body {
   }
 
   .nav-links {
-    flex-direction: column;
+    flex-direction: row;
     gap: 1em;
     margin-top: 1em;
   }
 
   .hero {
-    flex-direction: column;
+    flex-direction: row;
     padding: 2em;
     text-align: center;
     height: auto;
