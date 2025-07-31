@@ -146,6 +146,11 @@ body {
     height: auto;
   }
 
+  .hero-text,
+  .hero-image {
+    width: 100%;
+  }
+
   .hero-text h1 {
     font-size: 2em;
   }
