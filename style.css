@@ -140,7 +140,7 @@ body {
   }
 
   .hero {
-    flex-direction: column;
+    flex-direction: row;
     padding: 2em;
     text-align: center;
     height: auto;
