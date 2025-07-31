@@ -126,7 +126,7 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: autopx) {
   .navbar {
     flex-direction: row;
     align-items: flex-start;
