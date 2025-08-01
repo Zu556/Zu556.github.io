@@ -31,7 +31,7 @@ const searchInput = document.getElementById("searchInput");
 const checkboxes = document.querySelectorAll(".filters input[type='checkbox']");
 
 function displayActivities(filtered = activities) {
-  ActivitiesList.innerHTML = "";
+  activitiesList.innerHTML = "";
   filtered.forEach(activity => {
     const card = document.createElement("div");
     card.className = "activity-card";
@@ -40,17 +40,17 @@ function displayActivities(filtered = activities) {
       <p>${Activity.description}</p>
       <small>${Activity.tags.join(", ")}</small>
     `;
-    ActivitiesList.appendChild(card);
+    activitiesList.appendChild(card);
   });
 }
 
-function filterActivities() {
+function filteractivities() {
   const searchText = searchInput.value.toLowerCase();
   const selectedTags = Array.from(checkboxes)
     .filter(cb => cb.checked)
     .map(cb => cb.value);
 
-  const filtered = Activities.filter(act => {
+  const filtered = activities.filter(act => {
     const matchesSearch = act.title.toLowerCase().includes(searchText) || act.description.toLowerCase().includes(searchText);
     const matchesTags = selectedTags.length === 0 || selectedTags.every(tag => act.tags.includes(tag));
     return matchesSearch && matchesTags;
@@ -59,8 +59,8 @@ function filterActivities() {
   displayActivities(filtered);
 }
 
-searchInput.addEventListener("input", filterActivities);
-checkboxes.forEach(cb => cb.addEventListener("change", filterActivities));
+searchInput.addEventListener("input", filteractivities);
+checkboxes.forEach(cb => cb.addEventListener("change", filteractivities));
 
 // Initial display
 displayActivities();
