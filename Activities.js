@@ -26,21 +26,21 @@ const Activities = [
   }
 ];
 
-const ActivitiesList = document.getElementById("activitiesList");
+const ActivitiesList = document.getElementById("ActivitiesList");
 const searchInput = document.getElementById("searchInput");
 const checkboxes = document.querySelectorAll(".filters input[type='checkbox']");
 
 function displayActivities(filtered = activities) {
-  activitiesList.innerHTML = "";
+  ActivitiesList.innerHTML = "";
   filtered.forEach(activity => {
     const card = document.createElement("div");
     card.className = "activity-card";
     card.innerHTML = `
-      <h3>${activity.title}</h3>
-      <p>${activity.description}</p>
-      <small>${activity.tags.join(", ")}</small>
+      <h3>${Activity.title}</h3>
+      <p>${Activity.description}</p>
+      <small>${Activity.tags.join(", ")}</small>
     `;
-    activitiesList.appendChild(card);
+    ActivitiesList.appendChild(card);
   });
 }
 
@@ -50,7 +50,7 @@ function filterActivities() {
     .filter(cb => cb.checked)
     .map(cb => cb.value);
 
-  const filtered = activities.filter(act => {
+  const filtered = Activities.filter(act => {
     const matchesSearch = act.title.toLowerCase().includes(searchText) || act.description.toLowerCase().includes(searchText);
     const matchesTags = selectedTags.length === 0 || selectedTags.every(tag => act.tags.includes(tag));
     return matchesSearch && matchesTags;
