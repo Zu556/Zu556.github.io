@@ -1,4 +1,4 @@
-const activities = [
+const Activities = [
   {
     title: "Robotics Club",
     tags: ["STEM"],
@@ -26,7 +26,7 @@ const activities = [
   }
 ];
 
-const activitiesList = document.getElementById("activitiesList");
+const ActivitiesList = document.getElementById("activitiesList");
 const searchInput = document.getElementById("searchInput");
 const checkboxes = document.querySelectorAll(".filters input[type='checkbox']");
 
