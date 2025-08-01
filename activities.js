@@ -1,0 +1,66 @@
+const activities = [
+  {
+    title: "Robotics Club",
+    tags: ["STEM"],
+    description: "Learn to build and program robots for competitions."
+  },
+  {
+    title: "Drama Society",
+    tags: ["Arts"],
+    description: "Act, direct, and produce performances."
+  },
+  {
+    title: "Student Council",
+    tags: ["Leadership"],
+    description: "Organize school-wide initiatives and lead peers."
+  },
+  {
+    title: "Volunteering Team",
+    tags: ["Community"],
+    description: "Engage with your community through service."
+  },
+  {
+    title: "Soccer Team",
+    tags: ["Sports"],
+    description: "Train and compete in school-level tournaments."
+  }
+];
+
+const activitiesList = document.getElementById("activitiesList");
+const searchInput = document.getElementById("searchInput");
+const checkboxes = document.querySelectorAll(".filters input[type='checkbox']");
+
+function displayActivities(filtered = activities) {
+  activitiesList.innerHTML = "";
+  filtered.forEach(activity => {
+    const card = document.createElement("div");
+    card.className = "activity-card";
+    card.innerHTML = `
+      <h3>${activity.title}</h3>
+      <p>${activity.description}</p>
+      <small>${activity.tags.join(", ")}</small>
+    `;
+    activitiesList.appendChild(card);
+  });
+}
+
+function filterActivities() {
+  const searchText = searchInput.value.toLowerCase();
+  const selectedTags = Array.from(checkboxes)
+    .filter(cb => cb.checked)
+    .map(cb => cb.value);
+
+  const filtered = activities.filter(act => {
+    const matchesSearch = act.title.toLowerCase().includes(searchText) || act.description.toLowerCase().includes(searchText);
+    const matchesTags = selectedTags.length === 0 || selectedTags.every(tag => act.tags.includes(tag));
+    return matchesSearch && matchesTags;
+  });
+
+  displayActivities(filtered);
+}
+
+searchInput.addEventListener("input", filterActivities);
+checkboxes.forEach(cb => cb.addEventListener("change", filterActivities));
+
+// Initial display
+displayActivities();
