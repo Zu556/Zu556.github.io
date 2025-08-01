@@ -168,8 +168,8 @@ body {
     padding: 10px 20px;
     font-size: 1em;
   }
-}
-.Activities-section {
+
+.activities-section {
   padding: 2em;
   max-width: 900px;
   margin: auto;
@@ -192,13 +192,13 @@ body {
   margin-bottom: 2em;
 }
 
-.Activity-grid {
+.activity-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2em;
 }
 
-.Activity-card {
+.activity-card {
   background-color: #ffffff10;
   padding: 1.5em;
   border-radius: 10px;
