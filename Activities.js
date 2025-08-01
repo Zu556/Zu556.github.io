@@ -1,4 +1,4 @@
-const Activities = [
+const activities = [
   {
     title: "Robotics Club",
     tags: ["STEM"],
