@@ -26,7 +26,7 @@ const activities = [
   }
 ];
 
-const ActivitiesList = document.getElementById("ActivitiesList");
+const activitiesList = document.getElementById("ActivitiesList");
 const searchInput = document.getElementById("searchInput");
 const checkboxes = document.querySelectorAll(".filters input[type='checkbox']");
 
