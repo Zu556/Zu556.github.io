@@ -1,4 +1,4 @@
-const activities = [
+const Activities = [
   {
     title: "Robotics Club",
     tags: ["STEM"],
@@ -30,9 +30,9 @@ const activitiesList = document.getElementById("ActivitiesList");
 const searchInput = document.getElementById("searchInput");
 const checkboxes = document.querySelectorAll(".filters input[type='checkbox']");
 
-function displayActivities(filtered = activities) {
+function displayActivities(filtered = Activities) {
   activitiesList.innerHTML = "";
-  filtered.forEach(activity => {
+  filtered.forEach(Activity => {
     const card = document.createElement("div");
     card.className = "activity-card";
     card.innerHTML = `
@@ -50,7 +50,7 @@ function filteractivities() {
     .filter(cb => cb.checked)
     .map(cb => cb.value);
 
-  const filtered = activities.filter(act => {
+  const filtered = Activities.filter(act => {
     const matchesSearch = act.title.toLowerCase().includes(searchText) || act.description.toLowerCase().includes(searchText);
     const matchesTags = selectedTags.length === 0 || selectedTags.every(tag => act.tags.includes(tag));
     return matchesSearch && matchesTags;
@@ -59,8 +59,8 @@ function filteractivities() {
   displayActivities(filtered);
 }
 
-searchInput.addEventListener("input", filteractivities);
-checkboxes.forEach(cb => cb.addEventListener("change", filteractivities));
+searchInput.addEventListener("input", filterActivities);
+checkboxes.forEach(cb => cb.addEventListener("change", filterActivities));
 
 // Initial display
 displayActivities();
